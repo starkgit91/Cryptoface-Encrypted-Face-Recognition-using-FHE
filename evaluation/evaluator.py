@@ -166,7 +166,7 @@ class FREvaluator:
 
         # 10-fold cross-validation
         fold_accuracies = []
-        kf = KFold(n_splits=self.n_folds, shuffle=False)
+        kf = KFold(n_splits=self.n_folds, shuffle=True)
 
         for fold_idx, (train_idx, test_idx) in enumerate(kf.split(range(N))):
             acc = self.evaluate_fold(scores, labels, train_idx, test_idx)
